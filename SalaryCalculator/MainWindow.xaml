@@ -1,0 +1,37 @@
+﻿<Window x:Class="SalaryCalculator.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Расчёт зарплаты преподавателя" Height="350" Width="500">
+    <StackPanel Margin="20">
+        <GroupBox Header="Должность" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbAssistant" Content="Ассистент" Margin="5" GroupName="Position"/>
+                <RadioButton x:Name="rbDocent" Content="Доцент" Margin="5" GroupName="Position"/>
+                <RadioButton x:Name="rbProfessor" Content="Профессор" Margin="5" GroupName="Position"/>
+            </StackPanel>
+        </GroupBox>
+
+        <DockPanel Margin="0,0,0,10">
+            <Label Content="Количество часов:" DockPanel.Dock="Left" Width="120"/>
+            <TextBox x:Name="txtHours" Width="150" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <GroupBox Header="Подоходный налог" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbTax13" Content="13%" Margin="5" GroupName="Tax"/>
+                <RadioButton x:Name="rbTax0" Content="0%" Margin="5" GroupName="Tax"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Button x:Name="btnCalculate" Content="Вычислить" Width="100" Height="30" Margin="0,0,0,15" Click="BtnCalculate_Click"/>
+
+        <DockPanel Margin="0,0,0,5">
+            <Label Content="Начислено:" DockPanel.Dock="Left" Width="100"/>
+            <TextBlock x:Name="tbGross" Text="0.00 руб" VerticalAlignment="Center"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="в том числе налог:" DockPanel.Dock="Left" Width="100"/>
+            <TextBlock x:Name="tbTax" Text="0.00 руб" VerticalAlignment="Center"/>
+        </DockPanel>
+    </StackPanel>
+</Window>
